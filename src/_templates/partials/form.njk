@@ -1,0 +1,113 @@
+<div class="row justify-content-center my-4">
+    <button type="button" class="btn btn-success js-login" data-toggle="modal" data-target="#modalLoginForm">Log in</button>
+    <button type="button" id="test" class="btn btn-danger js-logout d-none">Log out</button>
+</div>
+<div class="alert alert-danger collapse" id="requireAlert" role="alert">
+    All the fields are mandatory
+</div>
+<form id="book-form" class="mb-4 needs-validation" novalidate="">
+
+</form>
+
+<script type="template-form" id="temp">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control js-title" id="title" placeholder="Title" required>
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control js-description" id="description" placeholder="Description" required>
+    </div>
+
+        <div class="rform-group panel">
+            <div class="row">
+                <div class="col">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input genre-checkbox" value="Drama" id="customCheck1">
+                      <label class="custom-control-label" for="customCheck1">Drama</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input genre-checkbox" value="Horror" id="customCheck2">
+                      <label class="custom-control-label" for="customCheck2">Horror</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input genre-checkbox" value="Romance" id="customCheck3">
+                      <label class="custom-control-label" for="customCheck3">Romance</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input genre-checkbox" value="Travel" id="customCheck4">
+                      <label class="custom-control-label" for="customCheck4">Travel</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input genre-checkbox" value="Guide" id="customCheck5">
+                      <label class="custom-control-label" for="customCheck5">Guide</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input genre-checkbox" value="Science" id="customCheck6">
+                      <label class="custom-control-label" for="customCheck6">Science</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input genre-checkbox" value="Comics" id="customCheck7">
+                      <label class="custom-control-label" for="customCheck7">Comics</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input genre-checkbox" value="Art" id="customCheck8">
+                      <label class="custom-control-label" for="customCheck8">Art</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input genre-checkbox" value="Biographies" id="customCheck9">
+                      <label class="custom-control-label" for="customCheck9">Biographies</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input genre-checkbox" value="Fantasy" id="customCheck10">
+                      <label class="custom-control-label" for="customCheck10">Fantasy</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input genre-checkbox" value="Mystery" id="customCheck11">
+                      <label class="custom-control-label" for="customCheck11">Mystery</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input genre-checkbox" value="History" id="customCheck12">
+                      <label class="custom-control-label" for="customCheck12">History</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col text-center">
+                    <div class="invalid-feedback">
+                          Please choose at least one genre.
+                    </div>
+                    <div class="alert alert-danger collapse" role="alert">
+                        All the fields are mandatory
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    <div class="form-group">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="type" id="exampleRadios1" value="public" checked>
+            <label class="form-check-label js-radio" for="exampleRadios1">
+            Public
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="type" id="exampleRadios2" value="private">
+            <label class="form-check-label js-radio" for="exampleRadios2">
+            Private
+            </label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</script>
+
+
