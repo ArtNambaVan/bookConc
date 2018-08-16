@@ -14,10 +14,10 @@ var userAuthorizationController = (function() {
 
     logOutBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        logInBtn.classList.toggle('d-none');
-        logOutBtn.classList.toggle('d-none');
+        logInBtn.classList.remove('d-none');
+        logOutBtn.classList.add('d-none');
         usersData.deleteCurrentUser();
-        mediator.publish('userLogOut');
+        mediator.publish('userOutSession');
         cookies.deleteCookie('name');
     });
 
@@ -34,8 +34,8 @@ var userAuthorizationController = (function() {
                 $('#loginError').hide('fade');
                 changeBtn();
                 showAlert(allUsers[i]);
-                mediator.publish('userLogIn', allUsers[i]);
-                cookies.setCookie('name', allUsers[i].name, {expires: 3600});
+                mediator.publish('userSession', allUsers[i]);
+                cookies.setCookie('name', allUsers[i].name, {expires: 36000});
                 return;
             }
         }
@@ -48,8 +48,8 @@ var userAuthorizationController = (function() {
 
 
     function changeBtn() {
-        logInBtn.classList.toggle('d-none');
-        logOutBtn.classList.toggle('d-none');
+        logInBtn.classList.add('d-none');
+        logOutBtn.classList.remove('d-none');
     };
 
     function showAlert(obj) {

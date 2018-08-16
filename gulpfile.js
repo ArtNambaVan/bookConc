@@ -40,7 +40,7 @@ PATH.js = {
 PATH.concat = {
     in  : PATH.src + 'js/modules/',
     out : PATH.dest + 'js/'
-}
+};
 
 
 PATH.html = {
@@ -159,7 +159,7 @@ gulp.task('default', ['browsersync', 'build'], function() {
 
     gulp.watch(PATH.js.in,     ['js', browsersync.reload]);
 
-    gulp.watch(PATH.concat.in,     ['concat', browsersync.reload]);
+    gulp.watch(PATH.concat.in + '*.js',     ['concat', browsersync.reload]);
 
     gulp.watch(
         [

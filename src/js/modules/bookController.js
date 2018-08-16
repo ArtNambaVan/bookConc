@@ -132,18 +132,6 @@ var booksFormController = (function() {
     }
 
     function addBookToTable(obj) {
-/*        var bookList = document.querySelector('.table-group'),
-            tmpl = document.getElementById('comment-template').content.cloneNode(true);
-        tmpl.querySelector('.id').innerText = obj.id;
-        tmpl.querySelector('.title').innerText = obj.title;
-        tmpl.querySelector('.description').innerText = obj.description;
-        tmpl.querySelector('.author').innerText = obj.author;
-        tmpl.querySelector('.date').innerText = obj.date;
-        tmpl.querySelector('.genre').innerText = obj.genre;
-        tmpl.querySelector('.type').innerText = obj.type;
-        tmpl.querySelector('.js-delete-btn').addEventListener('click', deleteBookFromTable);
-        bookList.appendChild(tmpl);*/
-
 
         var $bookList = $('.table-group'),
             $template = $bookList.find('#books-template').html(),
@@ -158,7 +146,7 @@ var booksFormController = (function() {
             type        : obj.type
         };
 
-        $bookList.append(Mustache.render($template, data))
+        $bookList.append(Mustache.render($template, data));
         $bookList.find('.js-delete-btn').on('click', deleteBookFromTable);
 
         updateBookPosition();
@@ -276,21 +264,12 @@ var booksFormController = (function() {
         $('.js-delete-btn').remove();
     };
 
-    mediator.subscribe('userOutSession', showPublicBooks);
+    //mediator.subscribe('userOutSession', showPublicBooks);
     mediator.subscribe('userSession', [sortable, showAllBooks, createForm]);
-    //mediator.subscribe('userSession', showAllBooks);
 
-    mediator.subscribe('userLogIn', [showAllBooks, sortable, createForm]);
+    //mediator.subscribe('userLogIn', [showAllBooks, sortable, createForm]);
 
-    mediator.subscribe('userLogOut', [showPublicBooks, removeSortable, hideAlert, removeForm]);
+    mediator.subscribe('userOutSession', [showPublicBooks, removeSortable, hideAlert, removeForm]);
 
-   // mediator.subscribe('userLogIn', sortable);
-
-    //mediator.subscribe('userLogOut', removeSortable);
-
-    //mediator.subscribe('userLogOut', hideAlert);
-   // mediator.subscribe('userLogIn', createForm);
-    //mediator.subscribe('userSession', createForm);
-    //mediator.subscribe('userLogOut', removeForm);
 
 })();
